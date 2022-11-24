@@ -37,8 +37,12 @@
   "devDependencies": {
     "@commitlint/cli": "^17.2.0",
     "@commitlint/config-conventional": "^17.2.0",
+    "autoprefixer": "^10.4.8",
+    "envault": "^3.1.2",
     "husky": "^8.0.2",
     "lint-staged": "^13.0.3",
-    "prettier": "^2.7.1"
+    "postcss": "^8.4.16",
+    "prettier": "^2.7.1",
+    "tailwindcss": "^3.1.8"
   }
 }
