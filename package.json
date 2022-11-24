@@ -1,0 +1,44 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "Onyinye Applications",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onyinye-ng/app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/onyinye-ng/app/issues"
+  },
+  "homepage": "https://github.com/onyinye-ng/app#readme",
+  "keywords": [
+    "onyinye",
+    "app",
+    "micro-frontends"
+  ],
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "husky install",
+    "clean:all": "npm run clean -ws",
+    "build:all": "echo \"Error: no package specified\" && exit 1",
+    "start:all": "npm run start -ws",
+    "test:all": "npm run test -ws",
+    "lint": "prettier --write --ignore-unknown ."
+  },
+  "lint-staged": {
+    "**/*": [
+      "prettier --write --ignore-unknown"
+    ]
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^17.2.0",
+    "@commitlint/config-conventional": "^17.2.0",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1"
+  }
+}
