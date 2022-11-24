@@ -21,8 +21,8 @@
   "scripts": {
     "prepare": "husky install",
     "clean:all": "npm run clean -ws",
-    "build:all": "echo \"Error: no package specified\" && exit 1",
-    "start:all": "npm run start -ws",
+    "build:all": "npm run build -ws",
+    "start:all": "npm run start:dev -ws",
     "test:all": "npm run test -ws",
     "lint": "prettier --write --ignore-unknown ."
   },
