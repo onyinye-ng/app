@@ -9,6 +9,7 @@
   - [About](#about)
   - [Applications](#applications)
   - [Usage](#usage)
+    - [Install dependencies](#install-dependencies)
     - [Build](#build)
     - [Start applications](#start-applications)
     - [Run Tests](#run-tests)
@@ -33,6 +34,14 @@ Onyinye Applications. 🚀
 > All apps share a [common][common-package] library.
 
 ## Usage
+
+### Install dependencies
+
+To install dependencies for the applications, run:
+
+```bash
+$ npm i -ws
+```
 
 ### Build
 
