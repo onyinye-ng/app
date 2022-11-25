@@ -103,5 +103,8 @@ dist
 # TernJS port file
 .tern-port
 
+# Build files
+packages/**/build/
+
 # Envault files
 .envault.json
