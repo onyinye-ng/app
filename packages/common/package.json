@@ -1,0 +1,41 @@
+{
+  "name": "@onyinye-app/common",
+  "version": "1.0.0",
+  "description": "Common code libraries shared across all Onyinye applications.",
+  "main": "build/src/index.js",
+  "scripts": {
+    "clean": "rm -rf build",
+    "build": "concurrently \"npm run build-typescript\" \"npm run build-tailwind\"",
+    "build-typescript": "tsc -w",
+    "build-tailwind": "npx tailwindcss -i ./src/index.css -o ./build/src/index.css --watch",
+    "pretest": "npm run build",
+    "posttest": "npm run clean",
+    "test": "npm run test"
+  },
+  "keywords": [],
+  "author": "Ebuka Odini <ebukaodini@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@craco/craco": "^7.0.0",
+    "@onyinye-app/common": "1.0.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.3",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.9",
+    "aes-js": "^3.1.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.9.3",
+    "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "postcss": "^8.4.16",
+    "tailwindcss": "^3.2.4",
+    "typescript": "^4.8.4"
+  }
+}
