@@ -9,9 +9,9 @@
     "build:ci": "concurrently \"tsc\" \"npx tailwindcss -i ./src/index.css -o ./build/src/index.css\"",
     "build-typescript": "tsc -w",
     "build-tailwind": "npx tailwindcss -i ./src/index.css -o ./build/src/index.css --watch",
-    "pretest": "npm run build",
+    "pretest": "npm run build:ci",
     "posttest": "npm run clean",
-    "test": "npm run test"
+    "test": "echo \"Error: no test specified\""
   },
   "keywords": [],
   "author": "Ebuka Odini <ebukaodini@gmail.com>",
