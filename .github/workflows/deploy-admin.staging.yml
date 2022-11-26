@@ -1,0 +1,59 @@
+# Action runs jobs automatically when the events defined below are triggered by github.
+
+# This action checks the commits that were pushed with the pull request
+name: Test Admin App
+
+# The jobs defined below would be triggered everytime there is a pull request on this repository with changes to the codes in the /packages/accounts directory.
+on:
+  push:
+    branches:
+      - staging
+    paths:
+      - "packages/admin/**"
+
+jobs:
+  # This job runs the test
+  tests:
+    # It runs on the latest version of ubuntu
+    runs-on: ubuntu-latest
+
+    # The strategy for runnig these tests
+    strategy:
+      # Use matrix to define variations for each job
+      matrix:
+        node-version: [16.x]
+
+    # These are the steps for the job
+    steps:
+      # this step uses the checkout action to checkout the repo
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          # fetch-depth defines the number of commits to fetch.
+          # 0 indicates all history for all branches and tags.
+          fetch-depth: 0
+      # Setup node
+      - name: Setup Node.js v-${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+          cache-dependency-path: "**/package-lock.json"
+      # Install dependencies
+      - name: Install dependencies
+        run: npm ci
+      # Build common package
+      - name: Build common package
+        run: npm run build:ci -w @onyinye-app/common
+      # Run tests
+      - name: Run tests
+        # env:
+        run: npm run test -w @onyinye-app/admin
+      # Deploy to Netlify
+      - name: Deploy
+        uses: jsmrcaga/action-netlify-deploy@v1.1.0
+        with:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_STAGING_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_ADMIN_STAGING_SITE_ID }}
+          NETLIFY_DEPLOY_TO_PROD: true
+          build_directory: ./packages/admin/build
