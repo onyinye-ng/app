@@ -10,6 +10,7 @@
   - [Applications](#applications)
   - [Usage](#usage)
     - [Install dependencies](#install-dependencies)
+    - [Setup environment](#setup-environment)
     - [Build](#build)
     - [Start applications](#start-applications)
     - [Run Tests](#run-tests)
@@ -42,6 +43,14 @@ To install dependencies for the applications, run:
 ```bash
 $ npm i -ws
 ```
+
+### Setup environment
+
+To setup your environment variables:
+
+- Log into the [envault app][envault-app]
+- Copy the cli setup command from the `app:development` application.
+- Run the command in the root directory.
 
 ### Build
 
@@ -123,6 +132,7 @@ To format your codes, run:
 $ npm run lint
 ```
 
+[envault-app]: envault-onyinye.herokuapp.com
 [website-app]: packages/website/
 [accounts-app]: packages/accounts/
 [dashboard-app]: packages/dashboard/
