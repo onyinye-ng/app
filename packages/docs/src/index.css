@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("http://fonts.cdnfonts.com/css/quantify");
 
 body {
   margin: 0;
