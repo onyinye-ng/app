@@ -1,4 +1,4 @@
-import { LoadingIndicator } from "../layouts/StatusBar"
+import { LoadingIndicator } from "../layouts/NotificationBar"
 
 /**
  * An optimized button.
