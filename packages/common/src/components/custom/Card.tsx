@@ -1,8 +1,8 @@
-import { Card as CardType } from "../../stores"
-import logo from "../../assets/logo3.svg"
-import { SparklesIcon, BoltIcon, TrashIcon } from "@heroicons/react/24/solid"
+import { CardInterface } from "../../"
+import { Star, Trash } from "iconsax-react"
+import { Zap } from "react-feather"
 
-export const Card: React.FC<{ card: CardType; onClick?: Function; showStatus?: boolean }> = ({
+export const Card: React.FC<{ card: CardInterface; onClick?: Function; showStatus?: boolean }> = ({
   card,
   onClick,
   showStatus = false,
@@ -16,21 +16,21 @@ export const Card: React.FC<{ card: CardType; onClick?: Function; showStatus?: b
         <span className="absolute top-0 right-0 mt-2 mr-3 font-medium text-neutral100">
           &#8358;{card?.amount}
         </span>
-        {card.new === true && (
-          <SparklesIcon className="absolute top-0 left-0 m-5 w-5 animate-ping text-secondary" />
+        {card.orderedFromStore === true && (
+          <Star className="absolute top-0 left-0 m-5 w-5 animate-ping text-secondary" />
         )}
-        <img
-          src={logo}
+        {/* <img
+          src={OnyinyeLogo}
           alt="Logo"
           className="lg:w-40 w-32"
-        />
+        /> */}
         {showStatus === true && (
           <div className="absolute bottom-0 right-0 m-3">
             <span>
-              {card?.status === "inactive" && <SparklesIcon className="w-4 text-neutral500" />}
-              {card?.status === "active" && <SparklesIcon className="w-4 text-secondary" />}
-              {card?.status === "used" && <BoltIcon className="w-4 text-success500" />}
-              {card?.status === "destroyed" && <TrashIcon className="w-4 text-error50" />}
+              {card?.status === "inactive" && <Star className="w-4 text-neutral500" />}
+              {card?.status === "active" && <Star className="w-4 text-secondary" />}
+              {card?.status === "used" && <Zap className="w-4 text-success500" />}
+              {card?.status === "destroyed" && <Trash className="w-4 text-error50" />}
             </span>
           </div>
         )}
