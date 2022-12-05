@@ -1,6 +1,6 @@
-import { useStatusStore } from "../stores"
+import { useAppNotificationStore } from "../"
 
 export const copyToClipboard = (text: string) => {
   navigator.clipboard.writeText(text)
-  useStatusStore.getState().toast.success("Copied to clipboard")
+  useAppNotificationStore.getState().toast.success("Copied to clipboard")
 }
