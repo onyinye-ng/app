@@ -44,11 +44,11 @@ jobs:
         run: npm ci
       # Build common package
       - name: Build common package
-        run: npm run build:ci -w @onyinye-app/common
+        run: npm run build -w @onyinye-app/common
       # Run tests
       - name: Run tests
         # env:
-        run: npm run test -w @onyinye-app/dashboard
+        run: npm run test:dashboard
       # Deploy to Netlify
       - name: Deploy
         uses: jsmrcaga/action-netlify-deploy@v1.1.0
