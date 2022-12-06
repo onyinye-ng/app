@@ -50,4 +50,4 @@ jobs:
       # Run tests
       - name: Run tests
         # env:
-        run: npm run test -w @onyinye-app/common
+        run: npm run test:common

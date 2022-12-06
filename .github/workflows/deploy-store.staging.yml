@@ -48,7 +48,7 @@ jobs:
       # Run tests
       - name: Run tests
         # env:
-        run: npm run test -w @onyinye-app/store
+        run: npm run test:store
       # Deploy to Netlify
       - name: Deploy
         uses: jsmrcaga/action-netlify-deploy@v1.1.0

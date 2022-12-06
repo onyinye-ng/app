@@ -58,7 +58,7 @@ const UserProfileComponent: React.FC<{}> = () => {
         />
       </div>
 
-      <div className="h-full w-[1px] border border-neutral400" />
+      <div className="h-full w-[1px] border-l border-neutral400" />
 
       <Bell
         size={24}
