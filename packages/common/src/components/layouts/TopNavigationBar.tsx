@@ -1,4 +1,4 @@
-import { ArrowDown2, HambergerMenu, Location } from "iconsax-react"
+import { ArrowDown2, HambergerMenu, Location, Notification } from "iconsax-react"
 import React from "react"
 import { Bell, BellOff } from "react-feather"
 import { Button, Caption, FootText, IconButton, UserInitials } from "../.."
@@ -60,7 +60,8 @@ const UserProfileComponent: React.FC<{}> = () => {
 
       <div className="h-full w-[1px] border-l border-neutral400" />
 
-      <Bell
+      <Notification
+        variant="Bold"
         size={24}
         className="text-neutral500"
       />
